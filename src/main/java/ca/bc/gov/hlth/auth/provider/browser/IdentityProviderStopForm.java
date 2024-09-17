@@ -45,11 +45,6 @@ public class IdentityProviderStopForm extends AbstractUsernameFormAuthenticator 
                 Map<String, String> data = new HashMap<>();
                 data.put("enabled", "true");
 
-                String tooltip = ridp.getConfig().get("tooltip");
-                if (tooltip != null && tooltip.length() > 0) {
-                    data.put("tooltip", tooltip);
-                }
-
                 idpContext.put(oidcAlias, data);
             }
         }
