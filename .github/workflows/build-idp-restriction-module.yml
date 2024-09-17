@@ -40,5 +40,5 @@ jobs:
       with:
          name: release-zip
          path: release.zip
-        retention-days: 1
+         retention-days: 1
 
