@@ -28,17 +28,16 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B clean package --file pom.xml
-    - name: Zip JAR and theme folder
+    - name: Copy JAR and theme to artifacts folder
       run: |
        mkdir -p release
        cp target/*.jar release/   
        cp -r theme release/   
-       zip -r release.zip release
 
-    - name: Upload ZIP artifact
+    - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-         name: release-zip
-         path: release.zip
+         name: IdpRestrictionModule
+         path: artifacts
          retention-days: 1
 
