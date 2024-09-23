@@ -30,9 +30,9 @@ jobs:
       run: mvn -B clean package --file pom.xml
     - name: Copy JAR and theme to artifacts folder
       run: |
-       mkdir -p release
-       cp target/*.jar release/   
-       cp -r theme release/   
+       mkdir -p artifacts
+       cp target/*.jar artifacts/   
+       cp -r theme artifacts/   
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
